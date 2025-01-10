@@ -30,10 +30,14 @@
             background-color: #028C6A;
             border-radius: 15px;
             box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
         .time {
             font-size: 4rem;
             margin: 0 15px;
+            text-align: center;
         }
         .label {
             font-size: 1.4rem;
@@ -41,11 +45,16 @@
         .designs {
             margin-top: 50px;
             color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
         .designs img {
-            width: 200px;
-            height: auto;
-            margin: 15px;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
         footer {
             position: fixed;
@@ -69,7 +78,6 @@
             <div class='time'><span id='seconds'>0</span><br><span class='label'>ثواني</span></div>
         </div>
         <div class='designs'>
-            <p>تصاميم تدل على السعودية:</p>
             <img src='https://example.com/ksa_flag.png' alt='علم السعودية'>
             <img src='https://example.com/palm_tree.png' alt='شجرة نخيل'>
             <img src='https://example.com/kaaba.png' alt='الكعبة'>
@@ -105,4 +113,3 @@
     </script>
 </body>
 </html>
-
