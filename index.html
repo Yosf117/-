@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='ar' dir='rtl'>
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Countdown to FIFA World Cup 2034</title>
+    <title>العد التنازلي لكأس العالم 2034 في السعودية</title>
     <style>
         body {
-            background-color: #004953;
+            background: linear-gradient(to bottom, #004953, #007a5a);
             color: #fff;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Almarai', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,50 +19,64 @@
             text-align: center;
         }
         h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 30px;
             color: #FFD700;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
         }
         .countdown {
-            font-size: 2rem;
-            padding: 20px;
-            background-color: #006C67;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 2.5rem;
+            padding: 30px;
+            background-color: #028C6A;
+            border-radius: 15px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
         }
         .time {
-            font-size: 3rem;
-            margin: 0 10px;
+            font-size: 4rem;
+            margin: 0 15px;
         }
         .label {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
         .designs {
-            margin-top: 40px;
+            margin-top: 50px;
             color: #FFFFFF;
         }
         .designs img {
-            width: 150px;
+            width: 200px;
             height: auto;
-            margin: 10px;
+            margin: 15px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 1rem;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #FFD700;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
     <div class='container'>
-        <h1>Countdown to FIFA World Cup 2034 - Saudi Arabia</h1>
+        <h1>العد التنازلي لكأس العالم 2034 - السعودية</h1>
         <div class='countdown'>
-            <div class='time'><span id='days'>0</span><br><span class='label'>Days</span></div>
-            <div class='time'><span id='hours'>0</span><br><span class='label'>Hours</span></div>
-            <div class='time'><span id='minutes'>0</span><br><span class='label'>Minutes</span></div>
-            <div class='time'><span id='seconds'>0</span><br><span class='label'>Seconds</span></div>
+            <div class='time'><span id='days'>0</span><br><span class='label'>أيام</span></div>
+            <div class='time'><span id='hours'>0</span><br><span class='label'>ساعات</span></div>
+            <div class='time'><span id='minutes'>0</span><br><span class='label'>دقائق</span></div>
+            <div class='time'><span id='seconds'>0</span><br><span class='label'>ثواني</span></div>
         </div>
         <div class='designs'>
-            <p>Designs representing Saudi Arabia:</p>
-            <img src='https://example.com/ksa_flag.png' alt='Saudi Arabia Flag'>
-            <img src='https://example.com/palm_tree.png' alt='Palm Tree'>
+            <p>تصاميم تدل على السعودية:</p>
+            <img src='https://example.com/ksa_flag.png' alt='علم السعودية'>
+            <img src='https://example.com/palm_tree.png' alt='شجرة نخيل'>
+            <img src='https://example.com/kaaba.png' alt='الكعبة'>
+            <img src='https://example.com/arabian_horse.png' alt='حصان عربي أصيل'>
         </div>
     </div>
+    <footer>جميع الحقوق محفوظة © 2034</footer>
 
     <script>
         const targetDate = new Date('November 21, 2034 00:00:00').getTime();
@@ -83,7 +97,7 @@
 
             if (distance < 0) {
                 clearInterval(countdownInterval);
-                document.querySelector('.countdown').innerHTML = 'The World Cup has begun!';
+                document.querySelector('.countdown').innerHTML = 'لقد بدأت كأس العالم!';
             }
         };
 
@@ -91,3 +105,4 @@
     </script>
 </body>
 </html>
+
