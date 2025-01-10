@@ -1,113 +1,203 @@
 <!DOCTYPE html>
-<html lang='ar' dir='rtl'>
+<html lang="en">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>العد التنازلي لكأس العالم 2034 في السعودية</title>
-    <style>
-        body {
-            background: linear-gradient(to bottom, #004953, #007a5a);
-            color: #fff;
-            font-family: 'Almarai', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-        }
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 30px;
-            color: #FFD700;
-            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-        }
-        .countdown {
-            font-size: 2.5rem;
-            padding: 30px;
-            background-color: #028C6A;
-            border-radius: 15px;
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        .time {
-            font-size: 4rem;
-            margin: 0 15px;
-            text-align: center;
-        }
-        .label {
-            font-size: 1.4rem;
-        }
-        .designs {
-            margin-top: 50px;
-            color: #FFFFFF;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .designs img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            font-size: 1rem;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: #FFD700;
-            padding: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HUDA FONDANT - Exquisite cake and recipe collections">
+  <title>HUDA FONDANT</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class='container'>
-        <h1>العد التنازلي لكأس العالم 2034 - السعودية</h1>
-        <div class='countdown'>
-            <div class='time'><span id='days'>0</span><br><span class='label'>أيام</span></div>
-            <div class='time'><span id='hours'>0</span><br><span class='label'>ساعات</span></div>
-            <div class='time'><span id='minutes'>0</span><br><span class='label'>دقائق</span></div>
-            <div class='time'><span id='seconds'>0</span><br><span class='label'>ثواني</span></div>
-        </div>
-        <div class='designs'>
-            <img src='/mnt/data/A_design_representing_Saudi_Arabia,_featuring_the_.png' alt='تصميم السعودية'>
-        </div>
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>HUDA FONDANT</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Welcome to HUDA FONDANT</h2>
+      <p>Indulge in the finest cakes and recipes made with love and passion.</p>
+      <a href="#recipes" class="btn">Explore Recipes</a>
     </div>
-    <footer>جميع الحقوق محفوظة © 2034</footer>
+  </section>
 
-    <script>
-        const targetDate = new Date('November 21, 2034 00:00:00').getTime();
+  <section id="recipes" class="recipes-section">
+    <h2>Our Exquisite Recipes</h2>
+    <div class="recipe-list">
+      <div class="recipe">
+        <img src="cake1.jpg" alt="Chocolate Cake">
+        <h3><a href="chocolate-cake.html">Chocolate Heaven</a></h3>
+        <p>A rich and moist chocolate cake with layers of decadence.</p>
+        <button class="share-btn" onclick="shareRecipe('Chocolate Heaven')">Share</button>
+      </div>
+      <div class="recipe">
+        <img src="cake2.jpg" alt="Vanilla Cake">
+        <h3><a href="vanilla-cake.html">Vanilla Delight</a></h3>
+        <p>Classic vanilla cake with buttercream frosting and fondant.</p>
+        <button class="share-btn" onclick="shareRecipe('Vanilla Delight')">Share</button>
+      </div>
+    </div>
+  </section>
 
-        const countdown = () => {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
+  <footer>
+    <p>&copy; 2025 HUDA FONDANT | All rights reserved.</p>
+  </footer>
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').innerText = days;
-            document.getElementById('hours').innerText = hours;
-            document.getElementById('minutes').innerText = minutes;
-            document.getElementById('seconds').innerText = seconds;
-
-            if (distance < 0) {
-                clearInterval(countdownInterval);
-                document.querySelector('.countdown').innerHTML = 'لقد بدأت كأس العالم!';
-            }
-        };
-
-        const countdownInterval = setInterval(countdown, 1000);
-    </script>
+  <script>
+    function shareRecipe(recipeName) {
+      const shareData = {
+        title: 'HUDA FONDANT',
+        text: `Check out this amazing recipe: ${recipeName}`,
+        url: window.location.href
+      };
+      try {
+        navigator.share(shareData)
+          .then(() => console.log('Recipe shared successfully!'))
+          .catch((error) => console.log('Error sharing recipe:', error));
+      } catch (error) {
+        console.log('Sharing not supported on this browser', error);
+      }
+    }
+  </script>
 </body>
 </html>
 
+<style>
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+  color: #333;
+}
+
+header {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.logo h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #222;
+}
+
+.hero {
+  background-image: url('hero-image.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  color: white;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.btn {
+  background-color: #e74c3c;
+  padding: 15px 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.recipes-section {
+  padding: 50px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.recipes-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.recipe-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.recipe {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.recipe img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.recipe h3 {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.recipe a {
+  text-decoration: none;
+  color: #333;
+}
+
+.share-btn {
+  background-color: #e74c3c;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.share-btn:hover {
+  background-color: #c0392b;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+</style>
