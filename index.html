@@ -7,6 +7,153 @@
   <title>HUDA FONDANT</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f3f3;
+      color: #333;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links li {
+      margin: 0 15px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #222;
+    }
+
+    .language-selector {
+      font-size: 18px;
+      cursor: pointer;
+      padding: 10px;
+      background-color: #e74c3c;
+      border-radius: 5px;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    .language-selector:hover {
+      background-color: #c0392b;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-image: url('https://i.imgur.com/Ct5GPEv.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 0;
+      color: white;
+      text-align: center;
+    }
+
+    .hero-content h2 {
+      font-size: 48px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+
+    .btn {
+      background-color: #e74c3c;
+      padding: 15px 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    /* Recipes Section */
+    .recipes-section {
+      padding: 50px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .recipes-section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .recipe-list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .recipe {
+      width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .recipe img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .recipe h3 {
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    .recipe a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .share-btn {
+      background-color: #e74c3c;
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .share-btn:hover {
+      background-color: #c0392b;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+  </style>
 </head>
 <body>
   <header>
@@ -15,27 +162,28 @@
         <h1>HUDA FONDANT</h1>
       </div>
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Recipes</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#" class="home-link">Home</a></li>
+        <li><a href="#" class="recipes-link">Recipes</a></li>
+        <li><a href="#" class="gallery-link">Gallery</a></li>
+        <li><a href="#" class="contact-link">Contact</a></li>
+        <li><span class="language-selector" onclick="toggleLanguage()">عربي</span></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-content">
-      <h2>Welcome to HUDA FONDANT</h2>
-      <p>Indulge in the finest cakes and recipes made with love and passion.</p>
+      <h2 class="hero-title">Welcome to HUDA FONDANT</h2>
+      <p class="hero-description">Indulge in the finest cakes and recipes made with love and passion.</p>
       <a href="#recipes" class="btn">Explore Recipes</a>
     </div>
   </section>
 
   <section id="recipes" class="recipes-section">
-    <h2>Our Exquisite Recipes</h2>
+    <h2 class="recipes-title">Our Exquisite Recipes</h2>
     <div class="recipe-list">
       <div class="recipe">
-        <img src="https://i.imgur.com/Ct5GPEv.jpg" alt="Cinnamon Muffin">
+        <img src="https://i.imgur.com/48MCqHj.jpg" alt="Cinnamon Muffin">
         <h3><a href="#">Cinnamon Muffin</a></h3>
         <p>Delicious and fluffy cinnamon muffin with a sweet glaze.</p>
         <button class="share-btn" onclick="shareRecipe('Cinnamon Muffin')">Share</button>
@@ -54,6 +202,35 @@
   </footer>
 
   <script>
+    let isArabic = false;
+
+    function toggleLanguage() {
+      isArabic = !isArabic;
+
+      // Change text based on selected language
+      if (isArabic) {
+        document.querySelector('.home-link').textContent = 'الصفحة الرئيسية';
+        document.querySelector('.recipes-link').textContent = 'الوصايا';
+        document.querySelector('.gallery-link').textContent = 'المعرض';
+        document.querySelector('.contact-link').textContent = 'اتصل بنا';
+        document.querySelector('.hero-title').textContent = 'مرحبًا بكم في HUDA FONDANT';
+        document.querySelector('.hero-description').textContent = 'استمتعوا بأشهى الكعك والوصفات المحضرة بحب وشغف.';
+        document.querySelector('.recipes-title').textContent = 'وصفاتنا الرائعة';
+        document.querySelector('.share-btn').textContent = 'مشاركة';
+        document.querySelector('.language-selector').textContent = 'English';
+      } else {
+        document.querySelector('.home-link').textContent = 'Home';
+        document.querySelector('.recipes-link').textContent = 'Recipes';
+        document.querySelector('.gallery-link').textContent = 'Gallery';
+        document.querySelector('.contact-link').textContent = 'Contact';
+        document.querySelector('.hero-title').textContent = 'Welcome to HUDA FONDANT';
+        document.querySelector('.hero-description').textContent = 'Indulge in the finest cakes and recipes made with love and passion.';
+        document.querySelector('.recipes-title').textContent = 'Our Exquisite Recipes';
+        document.querySelector('.share-btn').textContent = 'Share';
+        document.querySelector('.language-selector').textContent = 'عربي';
+      }
+    }
+
     function shareRecipe(recipeName) {
       const shareData = {
         title: 'HUDA FONDANT',
@@ -71,133 +248,3 @@
   </script>
 </body>
 </html>
-
-<style>
-/* Global Styles */
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f3f3f3;
-  color: #333;
-}
-
-header {
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-links {
-  list-style-type: none;
-  display: flex;
-}
-
-.nav-links li {
-  margin: 0 15px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.logo h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  color: #222;
-}
-
-.hero {
-  background-image: url('https://i.imgur.com/Ct5GPEv.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 100px 0;
-  color: white;
-  text-align: center;
-}
-
-.hero-content h2 {
-  font-size: 48px;
-  font-family: 'Playfair Display', serif;
-}
-
-.hero-content p {
-  font-size: 18px;
-  margin: 20px 0;
-}
-
-.btn {
-  background-color: #e74c3c;
-  padding: 15px 30px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
-.recipes-section {
-  padding: 50px;
-  background-color: #fff;
-  text-align: center;
-}
-
-.recipes-section h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.recipe-list {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.recipe {
-  width: 300px;
-  margin-bottom: 20px;
-}
-
-.recipe img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.recipe h3 {
-  font-size: 24px;
-  margin-top: 10px;
-}
-
-.recipe a {
-  text-decoration: none;
-  color: #333;
-}
-
-.share-btn {
-  background-color: #e74c3c;
-  padding: 10px 20px;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.share-btn:hover {
-  background-color: #c0392b;
-}
-
-footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-}
-</style>
